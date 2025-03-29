@@ -36,17 +36,3 @@ jobs:
         
       - name: Build
         working-directory: worksheet2/my-react-app  # Change to correct folder
-
-      - name: Set up Node.js ${{ matrix.node-version}} 
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-          
-      - name: Install dependencies
-        run: npm install
-        
-      - name: Run the tests
-        run: npm test
-        
-      - name: Build
-        run: npm run build
