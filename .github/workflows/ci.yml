@@ -18,16 +18,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         
-      - name: Set up Node.js ${{ matrix.node-version}} 
+      - name: Set up Node.js ${{ matrix.node-version }} 
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          
+
+      - name: Debug directory structure
+        run: ls -R  # Check where package.json is actually located
+
       - name: Install dependencies
+        working-directory: worksheet2/my-react-app  # Change to correct folder
         run: npm install
         
       - name: Run the tests
+        working-directory: worksheet2/my-react-app  # Change to correct folder
         run: npm test
         
       - name: Build
+        working-directory: worksheet2/my-react-app  # Change to correct folder
         run: npm run build
