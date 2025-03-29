@@ -27,12 +27,13 @@ jobs:
         run: ls -R  # Check where package.json is actually located
 
       - name: Install dependencies
-        working-directory: worksheet2/my-react-app  # Change to correct folder
         run: npm install
+        working-directory: worksheet2/my-react-app  # Change to correct folder
         
       - name: Run the tests
-        working-directory: worksheet2/my-react-app  # Change to correct folder
         run: npm test
+        working-directory: worksheet2/my-react-app  # Change to correct folder
         
       - name: Build
+        run: npm run build
         working-directory: worksheet2/my-react-app  # Change to correct folder
